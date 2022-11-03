@@ -8,7 +8,7 @@ print (huespedes)
 print (huespedes.items())
 #Aca imprime solamente
 print (huespedes.keys())
-#Aca va a recorrer todos las llaves del diccionario y me los va a imprimir
+#Aca va a recorrer todos las llaves del diccionario huespedes  y me los va a imprimir
 for key in huespedes:
     print (key)
 #Aca se imprime los valores que estan dentro de las llaves osea 'Juan Valdes', 'Paquita la del Barrio', 'Mariana Pajon']
@@ -30,7 +30,7 @@ for indice, key in enumerate(huespedes):
 print()
 #me va a imprimir "Paquita la del Barrio
 print (huespedes[105])
-#me va a imprimir "Paquita la del Barrio
+#me va a imprimir "Paquita la del Barrio"
 print (huespedes.get(105))
 #va a imprimir ====================================
 print ('====================================')
@@ -44,9 +44,9 @@ huespedes.setdefault('109','Luis Miguel')
 for huesped in huespedes.items():
     print (habitacion,':',huesped)
 print()
-#Agrega las llaves 201 , 301 con los valores 'Vicente Fernandez' y Pepe Guardiola
+#Crea un diccionario llamado registroshoy que va a tener las llaves 201, 301 y los valores Vicente Fernandez y Pepe Guardiola
 registroshoy={201:'Vicente Fernandez',301:'Pepe Guardiola'}
-#Agrega las llaves 201 , 301 con los valores 'Vicente Fernandez' y Pepe Guardiola al diccionario huespedes
+#Une al final de la lista huespedes los valores que estaban el la lista registroshoy
 huespedes.update(registroshoy)
 #Imprime en forma de lista hacia abajo todos las llaves y valores que hay en el diccionario huespedes
 for habitacion, huesped in huespedes.items():
@@ -59,7 +59,7 @@ huespedes[107]='Ricky Martin'
 print (huespedes)
 
 print ('====================================')
-#imprime{101: 'Juan Valdes', 105: 'Paquita la del Barrio', 107: 'Ricky Martin', '109': 'Luis Miguel', 201: 'Vicente Fernandez', 301: 'Pepe Guardiola'}
+#Elimina las llaves 102 y 202 del diccionario huespedes 
 
 del huespedes[102]
 huespedes.pop(202)
@@ -80,14 +80,14 @@ diccio=dict.fromkeys(lista,"xxx")
 print(diccio)
 
 print ('====================================')
-#Imprime {'plata': (500, 2500), 'cartera': ['Cedula', 'Moneda', 'Boletas'], 'mecato': 'Detodito', 'dias': 1}
-#{'plata': (500, 2500), 'cartera': ['Boletas', 'Cedula', 'Moneda'], 'mecato': 'Detodito', 'dias': 1}
-#{'plata': (500, 2500), 'cartera': ['Boletas', 'Cedula'], 'mecato': 'Detodito', 'dias': 1}
-#500
+#Primero crea un diccionario llamado inventario, dentro de este diccionario, dentro de este diccionario se almacenan agunos valores, tuplas y listas
 inventario={"plata": (500,2500), 'cartera' : ["Cedula","Moneda","Boletas"],'mecato':'Detodito','dias':1}
 print (inventario)
+#Hace que todos los valores  de la llave llamada cartera se ordenen en orden alfabetico
 inventario["cartera"].sort()
 print(inventario)
+#remueve el valor "Moneda" de la llave cartera 
 inventario["cartera"].remove("Moneda")
 print(inventario)
+#Imprime 500, que es el valor que esta ubicado en la posicion 0 de la llave plata 
 print(inventario.get("plata")[0])
